@@ -1,12 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Basics;
 
-// USD
-var wallet = new Wallet();
+Vin vinAudi = new Vin("WAUZZZ01234567890");
 
-var piatak = new Money(500, Currency.USD);
+Vin vinOpl = new Vin("WAUZZZ01234567812");
 
-wallet.AddMoney(piatak);
-wallet.RemoveMoney(new Money(360, Currency.USD));
+if(vinAudi.Equals(vinOpl))
+{
+    Console.WriteLine("Panie!");
+}
+else
+{
+    Console.WriteLine("Gites!");
+}
 
-Console.WriteLine(WalletFormatter.Format(wallet));
+try 
+{ 
+    Vin przebity = new AudiVin("WAUZZZ0123456784A");
+    Console.WriteLine(przebity.Get());
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
